@@ -21,7 +21,7 @@ const userSchema = new Schema(
       required: [true, "Email is required"],
       unique: true,
     },
-    subscription: {
+   /* subscription: {
       type: String,
       enum: ["starter", "pro", "business"],
       default: "starter",
@@ -29,8 +29,8 @@ const userSchema = new Schema(
     token: {
       type: String,
       default: null,
-    },
-  },
+    }, */
+  }, 
   { versionKey: false, timestamps: true }
 );
 
@@ -53,6 +53,7 @@ const schemas = {
   loginSchema,
 }
 
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 
-module.exports = { User, schemas };
+module.exports = { User, schemas }; 
+
