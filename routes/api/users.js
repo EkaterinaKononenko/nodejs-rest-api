@@ -5,7 +5,7 @@ const ctrl = require("../../controllers/auth");
 
 const router = express.Router();
 
-router.post("/signup", validateBody(schemas.signupSchema), ctrl.signup);
+router.post("/register", validateBody(schemas.signupSchema), ctrl.signup);
 
 router.post("/login", validateBody(schemas.loginSchema), ctrl.login);
 
