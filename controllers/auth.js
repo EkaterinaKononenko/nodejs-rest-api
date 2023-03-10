@@ -16,7 +16,6 @@ const signup = async (req, res) => {
     const newUser = await User.create({...req.body, password: hashPassword});
     res.status(201).json({
       email: newUser.email,
-      name: newUser.name,
       password: newUser.password,
     });
 }
@@ -45,9 +44,9 @@ const login = async (req, res) => {
 }
   
   const getCurrent = async (req, res) => {
-    const { email, name } = req.user;
+    const { email } = req.user;
 
-    res.json({ email, name });
+    res.json({ email });
   }
 
 const logout = async (req, res) => {
